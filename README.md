@@ -32,6 +32,7 @@ msf > msfupdate
 ```
 <br>
 Metasploit is quite big and it’s easy to get lost around. If you need help, run:
+
 ```
  # Show help
 msf > help           
@@ -56,6 +57,7 @@ Metasploit has thousands of modules. They are arranged in the following categori
 
 
 You can see the modules under each of these categories. Check what exists by running:
+
 ```
 $ show exploits
 $ show payloads
@@ -67,12 +69,14 @@ $ show auxillary
 
 <h1>$${\color{yellow}3.} \space {\color{yellow}Searching } \space {\color{yellow}for} \space {\color{yellow}Modules }$$</h1>
 If you’ve tried show exploits you’ve probably seen a huge list of modules. It’s impossible to go through this list and find what you need. You can use the search functionality to filter/look for your desired modules. Run:
+
 ```
 $ search ftp
 ```
 <br>
 
 This will show you modules that have exploits for FTP servers. You can filter based on more criteria:
+
 ```
 $ search ftp platform:windows rank:excellent
 ```
@@ -95,11 +99,13 @@ This will show excellently ranked FTP server exploits for windows machines. You 
 The following series of shell commands are typically used to run an exploit using Metasploit.
 
 At first select the module of your choice that you want to run for exploitation.
+
 ```
 msf > use exploit/[ExploitModule]
 ```
 <br>
 Modules have multiple options that need to be set for execution. To see what options can be set, see the options:
+
 ```
 msf > show options
 ```
@@ -429,8 +435,7 @@ Routing Through Sessions:
 All modules (exploits/post/aux) against the target subnet mask will be pivoted through this session.
 
 ```
-msf > route add [Subnet to Route To]
-[Subnet Netmask] [SessionID]
+msf > route add [Subnet to Route To] [Subnet Netmask] [SessionID]
 ```
 <br>
 
