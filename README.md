@@ -35,7 +35,8 @@ Metasploit is quite big and it’s easy to get lost around. If you need help, ru
 
 ```
  # Show help
-msf > help           
+msf > help
+msf > help set        
 ```
 The console output of the help command might feel overwhelming as well. But don’t worry. You’ll always have this blog post to help you out.
 <br>
@@ -51,6 +52,7 @@ Metasploit has thousands of modules. They are arranged in the following categori
 > - <h4>Exploits</h4> It is the most commonly used module. It sends payloads to targets and executes them.
 >  - <h4>Payloads</h4> It consists of code that runs remotely to exploit the target.
 >  - <h4>Encoders</h4> It encodes a payload so that it is not detected by firewalls/anti-malware programs.
+>  - <h4>Evasion</h4> While encoders will encode the payload, they should not be considered a direct attempt to evade antivirus software. On the other hand, “evasion” modules will try that, with more or less success.
 >  - <h4>Nops</h4> It keeps payload sizes consistent when encoders encode a payload. (Learn more about nop sled).
 >  - <h4>Post</h4> It contains modules that assist post-exploitation.
 >  - <h4>Auxillary</h4> It includes port scanners, fuzzers, sniffers, and other helper modules.
@@ -93,7 +95,34 @@ This will show excellently ranked FTP server exploits for windows machines. You 
     bid
     osdvb
 <br>
+
+> [!NOTE]
+> Another essential piece of information returned is in the “rank” column. Exploits are rated based on their reliability. The table below provides their respective descriptions.
+
+| Ranking | Description |
+| --- | --- |
+| **ExcellentRanking** | The exploit will never crash the service. This is the case for SQL Injection, CMD execution, RFI, LFI, etc. No typical memory corruption exploits should be given this ranking unless there are extraordinary circumstances (WMF Escape()). |
+| **GreatRanking** | The exploit has a default target AND either auto-detects the appropriate target or uses an application-specific return address AFTER a version check. |
+| **GoodRanking** | The exploit has a default target and it is the “common case” for this type of software (English, Windows 7 for a desktop app, 2012 for server, etc). Exploit does not auto-detect the target. |
+| **NormalRanking** | The exploit is otherwise reliable, but depends on a specific version that is not the “common case” for this type of software and can’t (or doesn’t) reliably autodetect.  |
+| **AverageRanking** | The exploit is generally unreliable or difficult to exploit, but has a success rate of 50% or more for common platforms.  |
+| **LowRanking** | The exploit is nearly impossible to exploit (under 50% success rate) for common platforms.  |
+| **ManualRanking** | The exploit is unstable or difficult to exploit and is basically a DoS (15% success rate or lower). This ranking is also used when the module has no use unless specifically configured by the user (e.g.: exploit/unix/webapp/php_eval).  |
+
+> Source: https://github.com/rapid7/metasploit-framework/wiki/Exploit-Ranking
+
 <br>
+
+> [!TIP]
+> Please remember that exploits take advantage of a vulnerability on the target system and may always show unexpected behavior. A low-ranking exploit may work perfectly, and an excellent ranked exploit may not, or worse, crash the target system.
+
+
+
+
+    
+<br>
+<br>
+
 
 <h1>$${\color{yellow}4.} \space {\color{yellow}Run } \space {\color{yellow}an} \space {\color{yellow}Exploit }$$</h1>
 The following series of shell commands are typically used to run an exploit using Metasploit.
@@ -123,6 +152,14 @@ Now start the exploit:
 ```
 msf > exploit
 ```
+<br>
+leave the context :
+
+```
+msf6 exploit(windows/smb/ms17_010_eternalblue) > back
+msf6 > 
+```
+
 <br>
 <br>
 
@@ -245,6 +282,15 @@ Proxy Server:
 msf > use auxiliary/server/socks4
 msf > run 
 ```
+<br>
+
+information on any module :
+
+```
+msf > info exploit/windows/smb/ms17_010_eternalblue
+msf exploit(windows/smb/ms17_010_eternalblue) > info
+```
+
 <br>
 
 msfvenom :
