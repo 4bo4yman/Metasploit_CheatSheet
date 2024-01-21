@@ -303,6 +303,20 @@ $ msfvenom –p [PayloadPath] –f [FormatType] LHOST=[LocalHost (if reverse con
 ```
 <br>
 
+> [!NOTE]
+> 
+>   Parameters you will often use are:
+> 
+> - <h4>RHOSTS</h4> “Remote host”, the IP address of the target system. A single IP address or a network range can be set. This will support the CIDR (Classless Inter-Domain Routing) notation (/24, /16, etc.) or a network range (10.10.10.x – 10.10.10.y). You can also use a file where targets are listed, one target per line using file:/path/of/the/target_file.txt, as you can see below.
+>    <p align="center"><img src="https://github.com/4bo4yman/Metasploit_CheatSheet/assets/156849852/560c8649-16c5-40e2-911f-56070d30ad3e" height="300px" width="800px"></p>
+>  - <h4>RPORT</h4> “Remote port”, the port on the target system the vulnerable application is running on.
+>  - <h4>PAYLOAD</h4> The payload you will use with the exploit.
+>  - <h4>LHOST</h4> “Localhost”, the attacking machine (your AttackBox or Kali Linux) IP address.
+>  - <h4>LPORT</h4> “Local port”, the port you will use for the reverse shell to connect back to. This is a port on your attacking machine, and you can set it to any port not used by any other application.
+>  - <h4>SESSION</h4> Each connection established to the target system using Metasploit will have a session ID. You will use this with post-exploitation modules that will connect to the target system using an existing connection.
+
+
+<br>
 Example :
 
 Reverse Meterpreter payload as an executable and redirected into a file:
